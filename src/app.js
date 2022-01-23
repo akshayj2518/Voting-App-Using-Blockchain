@@ -1,8 +1,6 @@
 App = {
   loading: false,
   contracts: {},
-  // form : true,
-  // connected: false,
 
   load: async () => {
     await App.loadWeb3()
@@ -48,7 +46,6 @@ App = {
 
   render: async () => {
 
-    // var electionInstance;
     var loader = $("#loader")
     var content = $("#content")
 
@@ -103,10 +100,6 @@ App = {
       var candidateId = $('#candidatesSelect').val()
     const event =  await App.elections.vote(candidateId)
     // console.log(event)
-    // cons
-    // window.location.reload()
-    // $('form').hide()
-    // App.form = false
     await App.render()}
     catch(error)
     {
@@ -117,54 +110,7 @@ App = {
       else
         window.alert("already casted vote")
     }
-    // window.location.reload()
-    
 },
-
-// listenForEvents: async function() {
-//   App.elections.then(function(instance) {
-//     instance.votedEvent({}, {
-//       fromBlock: 0,
-//       toBlock: 'latest'
-//     }).watch(function(error, event) {
-//       console.log("event triggered", event)
-//       // Reload when a new vote is recorded
-//       App.render();
-//       await window.location.reload()
-//     });
-//   });
-// }
-
-  // render: async () => {
-  //   if (App.loading) {
-  //     return
-  //   }
-
-  //   // Update app loading state
-  //   App.setLoading(true)
-
-  //   // Render Account
-  //   $('#account').html(App.account)
-
-  //   // Render Tasks
-  //   // await App.renderTasks()
-
-  //   // Update loading state
-  //   App.setLoading(false)
-  // },
-
-  //   setLoading: (boolean) => {
-  //   App.loading = boolean
-  //   const loader = $('#loader')
-  //   const content = $('#content')
-  //   if (boolean) {
-  //     loader.show()
-  //     content.hide()
-  //   } else {
-  //     loader.hide()
-  //     content.show()
-  //   }
-  // }
 
 }
  

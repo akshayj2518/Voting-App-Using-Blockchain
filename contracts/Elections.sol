@@ -7,24 +7,23 @@ contract Elections{
 		string name;
 		uint voteCount;
 	}
-	uint public candidateCount;
+	uint public candidateCount;			// Used to keep count of candidates and traverse on candidates list
 
-	mapping (uint => Candidate) public candidates;
-	mapping (address => bool) public voters;
+	mapping (uint => Candidate) public candidates;			// list of candidates
+	mapping (address => bool) public voters;				//list of voters who've voted
     // Constructor
     constructor () public {
-        // candidate = "Candidate 1";
-        addCandidate("Akshay Sir");
-        addCandidate("Nikita Ma'am");
+        addCandidate("Aj Sir");
+        addCandidate("Nj Ma'am");
     }
 
-    event CreateCandidate(
+    event CreateCandidate(    								//event on create new candidate
     	uint id,
 		string name,
 		uint voteCount
     	);
 
-    event votedEvent(
+    event votedEvent(										//Event emitted after voting function called
     	address add,
     	bool vote
     	);
@@ -36,7 +35,7 @@ contract Elections{
     }
 
     function vote (uint _candidateId) public {
-    	require(!voters[msg.sender]);
+    	require(!voters[msg.sender]);										//msg.sender is address of current user
     	require(_candidateId > 0 && _candidateId <= candidateCount);
 
     	voters[msg.sender]=true;
