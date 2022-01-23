@@ -1,4 +1,4 @@
-# Voting-App-Using-Blockchain
+# BallotBlock : Voting-App-Using-Blockchain
 Full Stack decentralized voting application that is secured by blockchain.
 
 ### Introduction
@@ -27,6 +27,14 @@ Client Side application is developed using Html, Css and Javascript with metamas
 - Smart Contract deployed is immutable, 
 so one needs to consider every circumstance before deploying the smart contract.
  It takes time to process a new transaction depending upon how many systems are hashing.
+ 
+ ### To Run
+ - Clone the repo.
+ - Install trufflev5.0.2, ganache and node.
+ - Run npm install to download dependencies.
+ - run npm build
+ - run npm migrate --reset
+ - run npm run dev
 
 
 
